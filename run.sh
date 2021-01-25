@@ -8,6 +8,8 @@ qemu-system-arm \
     -sd ./rootfs.ext4 \
     -dtb vexpress-v2p-ca9.dtb \
     -append " root=/dev/mmcblk0 rw rootwait earlyprintk console=ttyAMA0"  
+    -net nic \
+    -net tap,ifname=tap0,script=/etc/qemu-ifup 
 #    -netdev user,id=network0 -device ens33,netdev=network0
 #    -user-net
 #    -netdev vhost-user,id=ens33 \
